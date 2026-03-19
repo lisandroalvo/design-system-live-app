@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <h2>Design System</h2>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">
+                    <span class="material-icons-outlined">menu_open</span>
+                </button>
+            </div>
+            
+            <div class="sidebar-search">
+                <input type="text" class="search-input" id="sidebarSearch" placeholder="Search...">
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" data-section="getting-started" class="nav-link active" title="Getting Started">
+                        <span class="material-icons-outlined nav-icon">home</span>
+                        <span class="nav-label">Getting Started</span>
+                    </a></li>
+                    <li><a href="#" data-section="colors" class="nav-link" title="Colors">
+                        <span class="material-icons-outlined nav-icon">palette</span>
+                        <span class="nav-label">Colors</span>
+                    </a></li>
+                    <li><a href="#" data-section="typography" class="nav-link" title="Typography">
+                        <span class="material-icons-outlined nav-icon">text_fields</span>
+                        <span class="nav-label">Typography</span>
+                    </a></li>
+                    <li><a href="#" data-section="spacing" class="nav-link" title="Spacing">
+                        <span class="material-icons-outlined nav-icon">space_bar</span>
+                        <span class="nav-label">Spacing</span>
+                    </a></li>
+                    <li><a href="#" data-section="buttons" class="nav-link" title="Buttons">
+                        <span class="material-icons-outlined nav-icon">smart_button</span>
+                        <span class="nav-label">Buttons</span>
+                    </a></li>
+                    <li><a href="#" data-section="forms" class="nav-link" title="Form Controls">
+                        <span class="material-icons-outlined nav-icon">input</span>
+                        <span class="nav-label">Form Controls</span>
+                    </a></li>
+                    <li><a href="#" data-section="cards" class="nav-link" title="Cards">
+                        <span class="material-icons-outlined nav-icon">dashboard</span>
+                        <span class="nav-label">Cards</span>
+                    </a></li>
+                    <li><a href="#" data-section="badges" class="nav-link" title="Badges">
+                        <span class="material-icons-outlined nav-icon">label</span>
+                        <span class="nav-label">Badges</span>
+                    </a></li>
+                    <li><a href="#" data-section="icons" class="nav-link" title="Icons">
+                        <span class="material-icons-outlined nav-icon">emoji_symbols</span>
+                        <span class="nav-label">Icons</span>
+                    </a></li>
+                    <li><a href="#" data-section="components" class="nav-link" title="Components">
+                        <span class="material-icons-outlined nav-icon">widgets</span>
+                        <span class="nav-label">Components</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Topbar -->
+        <header class="topbar" id="topbar">
+            <h1 class="topbar-title" id="topbarTitle">Getting Started</h1>
+            <div class="topbar-right">
+                <span class="last-updated">Last updated: March 19, 2026</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content" id="content">
+            <!-- Getting Started Section -->
+            <section class="section active" id="getting-started">
+                <div class="section-header">
+                    <h2 class="section-title">Getting Started</h2>
+                    <p class="section-subtitle">Welcome to the Design System documentation. This is your single source of truth for all design decisions and component implementations.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Overview</h3>
+                    <p class="text-body">This design system provides a comprehensive set of reusable components, design tokens, and guidelines to ensure consistency across your application. All components are built with accessibility and performance in mind.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Installation</h3>
+                    <p class="text-body">Include the design system CSS in your project:</p>
+                    <div class="code-block">
+                        <button class="copy-button" data-copy-target="code-1">
+                            <span class="material-icons-outlined">content_copy</span>
+                            Copy
+                        </button>
+                        <pre><code id="code-1" class="language-html">&lt;link rel="stylesheet" href="design-system.css"&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Quick Start</h3>
+                    <p class="text-body">All design tokens are available as CSS custom properties. You can use them directly in your styles:</p>
+                    <div class="code-block">
+                        <button class="copy-button" data-copy-target="code-2">
+                            <span class="material-icons-outlined">content_copy</span>
+                            Copy
+                        </button>
+                        <pre><code id="code-2" class="language-css">.my-element {
+  color: var(--color-primary);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colors Section -->
+            <section class="section" id="colors">
+                <div class="section-header">
+                    <h2 class="section-title">Colors</h2>
+                    <p class="section-subtitle">Our color palette is designed for accessibility and visual harmony. Click any swatch to copy the hex code.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Primary Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch" data-color="#3B82F6" style="--swatch-color: #3B82F6;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Primary</div>
+                                <div class="color-hex">#3B82F6</div>
+                                <div class="color-var">--color-primary</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#60A5FA" style="--swatch-color: #60A5FA;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Primary Light</div>
+                                <div class="color-hex">#60A5FA</div>
+                                <div class="color-var">--color-primary-light</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#2563EB" style="--swatch-color: #2563EB;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Primary Dark</div>
+                                <div class="color-hex">#2563EB</div>
+                                <div class="color-var">--color-primary-dark</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Neutral Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch" data-color="#111827" style="--swatch-color: #111827;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Gray 900</div>
+                                <div class="color-hex">#111827</div>
+                                <div class="color-var">--color-gray-900</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#6B7280" style="--swatch-color: #6B7280;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Gray 500</div>
+                                <div class="color-hex">#6B7280</div>
+                                <div class="color-var">--color-gray-500</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#E5E7EB" style="--swatch-color: #E5E7EB;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Gray 200</div>
+                                <div class="color-hex">#E5E7EB</div>
+                                <div class="color-var">--color-gray-200</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#F9FAFB" style="--swatch-color: #F9FAFB;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Gray 50</div>
+                                <div class="color-hex">#F9FAFB</div>
+                                <div class="color-var">--color-gray-50</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Semantic Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch" data-color="#10B981" style="--swatch-color: #10B981;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Success</div>
+                                <div class="color-hex">#10B981</div>
+                                <div class="color-var">--color-success</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#F59E0B" style="--swatch-color: #F59E0B;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Warning</div>
+                                <div class="color-hex">#F59E0B</div>
+                                <div class="color-var">--color-warning</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#EF4444" style="--swatch-color: #EF4444;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Error</div>
+                                <div class="color-hex">#EF4444</div>
+                                <div class="color-var">--color-error</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" data-color="#3B82F6" style="--swatch-color: #3B82F6;">
+                            <div class="color-preview"></div>
+                            <div class="color-info">
+                                <div class="color-name">Info</div>
+                                <div class="color-hex">#3B82F6</div>
+                                <div class="color-var">--color-info</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section class="section" id="typography">
+                <div class="section-header">
+                    <h2 class="section-title">Typography</h2>
+                    <p class="section-subtitle">Typography scale and styles for consistent text hierarchy.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Font Family</h3>
+                    <p class="text-body">We use Inter as our primary typeface for its excellent readability and modern aesthetic.</p>
+                    <div class="code-block">
+                        <button class="copy-button" data-copy-target="code-3">
+                            <span class="material-icons-outlined">content_copy</span>
+                            Copy
+                        </button>
+                        <pre><code id="code-3" class="language-css">font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Type Scale</h3>
+                    <div class="typography-examples">
+                        <div class="typography-item">
+                            <div class="typography-label">Display</div>
+                            <div class="typography-example" style="font-size: 48px; font-weight: 700; line-height: 1.2;">The quick brown fox</div>
+                            <div class="typography-specs">48px / 700 / 1.2</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Heading 1</div>
+                            <div class="typography-example" style="font-size: 36px; font-weight: 700; line-height: 1.25;">The quick brown fox</div>
+                            <div class="typography-specs">36px / 700 / 1.25</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Heading 2</div>
+                            <div class="typography-example" style="font-size: 30px; font-weight: 600; line-height: 1.3;">The quick brown fox</div>
+                            <div class="typography-specs">30px / 600 / 1.3</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Heading 3</div>
+                            <div class="typography-example" style="font-size: 24px; font-weight: 600; line-height: 1.35;">The quick brown fox</div>
+                            <div class="typography-specs">24px / 600 / 1.35</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Body Large</div>
+                            <div class="typography-example" style="font-size: 18px; font-weight: 400; line-height: 1.6;">The quick brown fox jumps over the lazy dog</div>
+                            <div class="typography-specs">18px / 400 / 1.6</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Body</div>
+                            <div class="typography-example" style="font-size: 16px; font-weight: 400; line-height: 1.6;">The quick brown fox jumps over the lazy dog</div>
+                            <div class="typography-specs">16px / 400 / 1.6</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Body Small</div>
+                            <div class="typography-example" style="font-size: 14px; font-weight: 400; line-height: 1.5;">The quick brown fox jumps over the lazy dog</div>
+                            <div class="typography-specs">14px / 400 / 1.5</div>
+                        </div>
+                        <div class="typography-item">
+                            <div class="typography-label">Caption</div>
+                            <div class="typography-example" style="font-size: 12px; font-weight: 400; line-height: 1.4; color: #6B7280;">The quick brown fox jumps over the lazy dog</div>
+                            <div class="typography-specs">12px / 400 / 1.4</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spacing Section -->
+            <section class="section" id="spacing">
+                <div class="section-header">
+                    <h2 class="section-title">Spacing</h2>
+                    <p class="section-subtitle">Consistent spacing scale based on 4px increments for harmonious layouts.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Spacing Scale</h3>
+                    <div class="spacing-examples">
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 4px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">XS</div>
+                                <div class="spacing-value">4px</div>
+                                <div class="spacing-var">--spacing-1</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 8px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">SM</div>
+                                <div class="spacing-value">8px</div>
+                                <div class="spacing-var">--spacing-2</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 12px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">MD</div>
+                                <div class="spacing-value">12px</div>
+                                <div class="spacing-var">--spacing-3</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 16px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">LG</div>
+                                <div class="spacing-value">16px</div>
+                                <div class="spacing-var">--spacing-4</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 24px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">XL</div>
+                                <div class="spacing-value">24px</div>
+                                <div class="spacing-var">--spacing-6</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 32px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">2XL</div>
+                                <div class="spacing-value">32px</div>
+                                <div class="spacing-var">--spacing-8</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 48px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">3XL</div>
+                                <div class="spacing-value">48px</div>
+                                <div class="spacing-var">--spacing-12</div>
+                            </div>
+                        </div>
+                        <div class="spacing-item">
+                            <div class="spacing-visual" style="width: 64px;"></div>
+                            <div class="spacing-info">
+                                <div class="spacing-name">4XL</div>
+                                <div class="spacing-value">64px</div>
+                                <div class="spacing-var">--spacing-16</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buttons Section -->
+            <section class="section" id="buttons">
+                <div class="section-header">
+                    <h2 class="section-title">Buttons</h2>
+                    <p class="section-subtitle">Interactive button components with multiple variants and states.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Primary Buttons</h3>
+                    <div class="component-demo">
+                        <button class="btn btn-primary">Primary Button</button>
+                        <button class="btn btn-primary" disabled>Disabled</button>
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-button" data-copy-target="code-4">
+                            <span class="material-icons-outlined">content_copy</span>
+                            Copy
+                        </button>
+                        <pre><code id="code-4" class="language-html">&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Secondary Buttons</h3>
+                    <div class="component-demo">
+                        <button class="btn btn-secondary">Secondary Button</button>
+                        <button class="btn btn-secondary" disabled>Disabled</button>
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-button" data-copy-target="code-5">
+                            <span class="material-icons-outlined">content_copy</span>
+                            Copy
+                        </button>
+                        <pre><code id="code-5" class="language-html">&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Outline Buttons</h3>
+                    <div class="component-demo">
+                        <button class="btn btn-outline">Outline Button</button>
+                        <button class="btn btn-outline" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Button Sizes</h3>
+                    <div class="component-demo">
+                        <button class="btn btn-primary btn-sm">Small</button>
+                        <button class="btn btn-primary">Medium</button>
+                        <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Controls Section -->
+            <section class="section" id="forms">
+                <div class="section-header">
+                    <h2 class="section-title">Form Controls</h2>
+                    <p class="section-subtitle">Input fields, selects, and other form elements.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Text Inputs</h3>
+                    <div class="component-demo">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Disabled Input</label>
+                            <input type="text" class="form-input" placeholder="Disabled" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Select Dropdown</h3>
+                    <div class="component-demo">
+                        <div class="form-group">
+                            <label class="form-label">Choose Option</label>
+                            <select class="form-select">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Textarea</h3>
+                    <div class="component-demo">
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-textarea" rows="4" placeholder="Enter your message..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Checkboxes & Radio Buttons</h3>
+                    <div class="component-demo">
+                        <div class="form-group">
+                            <label class="form-checkbox">
+                                <input type="checkbox" checked>
+                                <span>Accept terms and conditions</span>
+                            </label>
+                            <label class="form-checkbox">
+                                <input type="checkbox">
+                                <span>Subscribe to newsletter</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-radio">
+                                <input type="radio" name="plan" checked>
+                                <span>Free Plan</span>
+                            </label>
+                            <label class="form-radio">
+                                <input type="radio" name="plan">
+                                <span>Pro Plan</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section class="section" id="cards">
+                <div class="section-header">
+                    <h2 class="section-title">Cards</h2>
+                    <p class="section-subtitle">Container components for grouping related content.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Basic Card</h3>
+                    <div class="component-demo">
+                        <div class="card">
+                            <h4 class="card-title">Card Title</h4>
+                            <p class="card-text">This is a basic card component with a title and some content. Cards are used to group related information together.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Card with Header</h3>
+                    <div class="component-demo">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Featured Project</h4>
+                                <span class="badge badge-success">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This card includes a header section with a title and badge. Perfect for displaying status or metadata.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Card Grid</h3>
+                    <div class="component-demo">
+                        <div class="card-grid">
+                            <div class="card">
+                                <h4 class="card-title">Card 1</h4>
+                                <p class="card-text">Content for the first card in the grid.</p>
+                            </div>
+                            <div class="card">
+                                <h4 class="card-title">Card 2</h4>
+                                <p class="card-text">Content for the second card in the grid.</p>
+                            </div>
+                            <div class="card">
+                                <h4 class="card-title">Card 3</h4>
+                                <p class="card-text">Content for the third card in the grid.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Badges Section -->
+            <section class="section" id="badges">
+                <div class="section-header">
+                    <h2 class="section-title">Badges</h2>
+                    <p class="section-subtitle">Small status indicators and labels.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Badge Variants</h3>
+                    <div class="component-demo">
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-warning">Warning</span>
+                        <span class="badge badge-error">Error</span>
+                        <span class="badge badge-neutral">Neutral</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Badge Sizes</h3>
+                    <div class="component-demo">
+                        <span class="badge badge-primary badge-sm">Small</span>
+                        <span class="badge badge-primary">Medium</span>
+                        <span class="badge badge-primary badge-lg">Large</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Icons Section -->
+            <section class="section" id="icons">
+                <div class="section-header">
+                    <h2 class="section-title">Icons</h2>
+                    <p class="section-subtitle">We use Material Icons Outlined for a consistent icon system.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Common Icons</h3>
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">home</span>
+                            <span class="icon-name">home</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">search</span>
+                            <span class="icon-name">search</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">settings</span>
+                            <span class="icon-name">settings</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">person</span>
+                            <span class="icon-name">person</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">notifications</span>
+                            <span class="icon-name">notifications</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">favorite</span>
+                            <span class="icon-name">favorite</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">delete</span>
+                            <span class="icon-name">delete</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">edit</span>
+                            <span class="icon-name">edit</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">check_circle</span>
+                            <span class="icon-name">check_circle</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">error</span>
+                            <span class="icon-name">error</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">info</span>
+                            <span class="icon-name">info</span>
+                        </div>
+                        <div class="icon-item">
+                            <span class="material-icons-outlined">warning</span>
+                            <span class="icon-name">warning</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section class="section" id="components">
+                <div class="section-header">
+                    <h2 class="section-title">Components</h2>
+                    <p class="section-subtitle">Complex UI patterns and composite components.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Alert Component</h3>
+                    <div class="component-demo">
+                        <div class="alert alert-info">
+                            <span class="material-icons-outlined">info</span>
+                            <div>
+                                <strong>Info:</strong> This is an informational alert message.
+                            </div>
+                        </div>
+                        <div class="alert alert-success">
+                            <span class="material-icons-outlined">check_circle</span>
+                            <div>
+                                <strong>Success:</strong> Your changes have been saved successfully.
+                            </div>
+                        </div>
+                        <div class="alert alert-warning">
+                            <span class="material-icons-outlined">warning</span>
+                            <div>
+                                <strong>Warning:</strong> Please review your input before proceeding.
+                            </div>
+                        </div>
+                        <div class="alert alert-error">
+                            <span class="material-icons-outlined">error</span>
+                            <div>
+                                <strong>Error:</strong> Something went wrong. Please try again.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Progress Bar</h3>
+                    <div class="component-demo">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Loading Spinner</h3>
+                    <div class="component-demo">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
